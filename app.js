@@ -50,7 +50,7 @@ app.use(
 app.use('/', index);
 app.use('/items', items);
 app.use('/items', function (req, res) {
-    res.render({username: "Maruf"})
+    res.render({username: "A"})
   });
 app.use('/users', users);
 
