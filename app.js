@@ -40,17 +40,17 @@ type koneksi : single,pool and request
 -------------------------------------------*/
 app.use(
     connection(mysql,{
-        host: 'containers-us-west-31.railway.app',
-        user: 'root', // your mysql user
-        password : 'G0Dxn5eBLwf876LOONGS', // your mysql password
-        port : 5756, //port mysql
-        database:'railway' // your database name
+        host: process.env.MYSQLHOST,
+        user: process.env.MYSQLUSER, // your mysql user
+        password : process.env.MYSQLPASSWORD, // your mysql password
+        port : process.env.MYSQLPORT, //port mysql
+        database:process.env.MYSQLDATABASE // your database name
     },'pool') //or single
 );
 app.use('/', index);
 app.use('/items', items);
 app.use('/items', function (req, res) {
-    res.render({username: "A"})
+    res.render({username: "Maruf"})
   });
 app.use('/users', users);
 
